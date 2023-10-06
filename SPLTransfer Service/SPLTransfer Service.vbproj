@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{19A4E619-167A-495F-82BF-ABC79AB86338}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>SPLTransfer_Service.Service1</StartupObject>
+    <StartupObject>SPLTransfer_Service.SPLTransSrv</StartupObject>
     <RootNamespace>SPLTransfer_Service</RootNamespace>
     <AssemblyName>SPLTransfer Service</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -75,11 +75,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
-    <Compile Include="Service1.vb">
+    <Compile Include="SPLTransSrv.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Service1.Designer.vb">
-      <DependentUpon>Service1.vb</DependentUpon>
+    <Compile Include="SPLTransSrv.Designer.vb">
+      <DependentUpon>SPLTransSrv.vb</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -99,6 +99,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SPLTransSrv.resx">
+      <DependentUpon>SPLTransSrv.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

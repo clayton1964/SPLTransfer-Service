@@ -1,7 +1,7 @@
 ﻿Imports System.ServiceProcess
 
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Service1
+Partial Class SPLTransSrv
 	Inherits System.ServiceProcess.ServiceBase
 
 	'UserService overrides dispose to clean up the component list.
@@ -28,7 +28,7 @@ Partial Class Service1
 		'
 		'   ServicesToRun = New System.ServiceProcess.ServiceBase () {New Service1, New MySecondUserService}
 		'
-		ServicesToRun = New System.ServiceProcess.ServiceBase() {New Service1}
+		ServicesToRun = New System.ServiceProcess.ServiceBase() {New SPLTransSrv}
 
 		System.ServiceProcess.ServiceBase.Run(ServicesToRun)
 	End Sub
@@ -41,8 +41,15 @@ Partial Class Service1
 	' Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> _
 	Private Sub InitializeComponent()
-		components = New System.ComponentModel.Container()
+		Me.EventLog1 = New System.Diagnostics.EventLog()
+		CType(Me.EventLog1, System.ComponentModel.ISupportInitialize).BeginInit()
+		'
+		'SPLTransSrv
+		'
 		Me.ServiceName = "Service1"
+		CType(Me.EventLog1, System.ComponentModel.ISupportInitialize).EndInit()
+
 	End Sub
 
+	Friend WithEvents EventLog1 As EventLog
 End Class
