@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <config>
 	<!--This section contains the information about the main SPL system.  -->
-	<mainserver>
-		<ip></ip>
-	</mainserver>
+	<mainserver> 
+		<ip>172.16.3.55</ip>
+<port>8200</port>
+ </mainserver>
 </config>
