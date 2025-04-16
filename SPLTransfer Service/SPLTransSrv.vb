@@ -1,12 +1,19 @@
 ﻿Public Class SPLTransSrv
+
+
 	Public Sub New()
-
-		' This call is required by the designer.
+		MyBase.New()
 		InitializeComponent()
-
-		' Add any initialization after the InitializeComponent() call.
-
+		Me.EventLog1 = New System.Diagnostics.EventLog
+		If Not System.Diagnostics.EventLog.SourceExists("MySource") Then
+			System.Diagnostics.EventLog.CreateEventSource("MySource",
+			"MyNewLog")
+		End If
+		EventLog1.Source = "MySource"
+		EventLog1.Log = "MyNewLog"
 	End Sub
+
+	
 
 	Protected Overrides Sub OnStart(ByVal args() As String)
 		' Add code here to start your service. This method should set things
